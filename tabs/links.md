@@ -62,6 +62,10 @@ page_data:
   list:
     # divvy bikes
     - type: divvy
+      title: "Github repo"
+      url: "https://github.com/ca-ros/divvy-bikeshare"
+      info: "Github repository location which contains all the documentation and files used in the analysis."
+    - type: divvy
       title: "Company"
       url: "https://divvybikes.com"
       info: "Divvy bikes is a bikesharing company located at Chicago."

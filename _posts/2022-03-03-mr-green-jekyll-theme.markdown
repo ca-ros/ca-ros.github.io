@@ -1,22 +1,22 @@
 ---
 # multilingual page pair id, this must pair with translations of this page. (This name must be unique)
-lng_pair: id_Mr_Green_Jekyll_Theme
-title: Mr. Green Jekyll Theme
+lng_pair: projects
+title: Divvy bikes: data cleaning documentation
 
 # post specific
 # if not specified, .name will be used from _data/owner/[language].yml
-author: Mr. Green's Workshop
+author: Chris Arthur Rosaroso
 # multiple category is not supported
-category: jekyll
+category: porjects
 # multiple tag entries are possible
-tags: [jekyll, new feature]
+tags: [projects, documentation]
 # thumbnail image for post
 img: ":mock1.jpg"
 # disable comments on this page
 #comments_disable: true
 
 # publish date
-date: 2022-03-03 12:32:10 +0900
+date: 2022-07-13 12:32:10 +0900
 
 # seo
 # if not specified, date will be used.
@@ -34,7 +34,7 @@ date: 2022-03-03 12:32:10 +0900
 # exclude from search engines
 #search_engine_exclude: true
 # to disable this page, simply set published: false or delete this file
-published: false
+#published: false
 ---
 
 {%- capture readme_file -%}{%- include_relative _README.md -%}{%- endcapture -%}

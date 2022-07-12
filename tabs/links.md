@@ -40,53 +40,75 @@ lng_pair: id_links
 page_data:
   main:
     header: "Links"
-    info: "Your Links page description."
+    info: "Links used in projects."
 
   # To change order of the Categories, simply change order. (you don't need to change list order.)
   category:
-    - title: "JekyII / Liquid"
-      type: id_jekyiiliquid
+
+#    - title: "JekyII / Liquid"
+#      type: id_jekyiiliquid
+#      color: "gray"
+#    - title: "Web Design"
+#      type: id_webdesign
+#      color: "#F4A273"
+#    - title: "Programming"
+#      type: id_programming
+#      color: "#62b462"
+
+    - title: "Divvy bikes"
+      type: divvy
       color: "gray"
-    - title: "Web Design"
-      type: id_webdesign
-      color: "#F4A273"
-    - title: "Programming"
-      type: id_programming
-      color: "#62b462"
 
   list:
-    -
+    # divvy bikes
+    - type: divvy
+      title: "Company"
+      url: "https://divvybikes.com"
+      info: "Divvy bikes is a bikesharing company located at Chicago."
+    - type: divvy
+      title: "Raw data"
+      url: "https://divvy-tripdata.s3.amazonaws.com/index.html"
+      info: "Divvy bikes data from June 27, 2013 to present."
+    - type: divvy
+      title: "Stations table"
+      url: "https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq"
+      info: "Table which contains additional information about the stations. These includes station ID, dock max capacity, and coordinates. This data is downloaded at Chicago Open Data Portal."
+    - type: divvy
+      title: "Dashboard"
+      url: ""
+      info: "Interactive dashboard created on tableau to analyze the data."
+
     # programming
-    - type: id_programming
-      title: "Stack OverFlow"
-      url: "https://stackoverflow.com/"
-      info: "Stack Overflow is a question and answer website for professional and enthusiastic programmers."
+#    - type: id_programming
+#      title: "Stack OverFlow"
+#      url: "https://stackoverflow.com/"
+#      info: "Stack Overflow is a question and answer website for professional and enthusiastic programmers."
 
     # jekyiiliquid
-    - type: id_jekyiiliquid
-      title: "Jekyll"
-      url: "https://jekyllrb.com/"
-      info: "Transform your plain text into static websites and blogs."
-    - type: id_jekyiiliquid
-      title: "Jekyll Cheat Sheet"
-      url: "https://cloudcannon.com/community/jekyll-cheat-sheet/"
-      info: "There are so many Jekyll variables and filters to remember and it can be tricky to keep it all in your head. This cheat sheet serves as a quick reference of everything Jekyll can do."
-    - type: id_jekyiiliquid
-      title: "Liquid for Designers"
-      url: "https://github.com/Shopify/liquid/wiki/Liquid-for-Designers"
-      info: "Liquid for Designers wiki on GitHub"
-    - type: id_jekyiiliquid
-      title: "Liquid for Programmers"
-      url: "https://github.com/Shopify/liquid/wiki/Liquid-for-Programmers"
-      info: "Liquid for Programmers wiki on GitHub"
-    - type: id_jekyiiliquid
-      title: "Liquid Reference"
-      url: "https://shopify.dev/api/liquid/"
-      info: "Liquid is a template language created by Shopify and written in Ruby. It is now available as an open source project on GitHub"
+#    - type: id_jekyiiliquid
+#      title: "Jekyll"
+#      url: "https://jekyllrb.com/"
+#      info: "Transform your plain text into static websites and blogs."
+#    - type: id_jekyiiliquid
+#      title: "Jekyll Cheat Sheet"
+#      url: "https://cloudcannon.com/community/jekyll-cheat-sheet/"
+#      info: "There are so many Jekyll variables and filters to remember and it can be tricky to keep it all in your head. This cheat sheet serves as a quick reference of everything Jekyll can do."
+#    - type: id_jekyiiliquid
+#      title: "Liquid for Designers"
+#      url: "https://github.com/Shopify/liquid/wiki/Liquid-for-Designers"
+#      info: "Liquid for Designers wiki on GitHub"
+#    - type: id_jekyiiliquid
+#      title: "Liquid for Programmers"
+#      url: "https://github.com/Shopify/liquid/wiki/Liquid-for-Programmers"
+#      info: "Liquid for Programmers wiki on GitHub"
+#    - type: id_jekyiiliquid
+#      title: "Liquid Reference"
+#      url: "https://shopify.dev/api/liquid/"
+#      info: "Liquid is a template language created by Shopify and written in Ruby. It is now available as an open source project on GitHub"
 
     # webdesign
-    - type: id_webdesign
-      title: "W3Schools"
-      url: "https://www.w3schools.com/"
-      info: "W3Schools offers free online tutorials, references and exercises in all the major languages of the web. Covering popular subjects like HTML, CSS, JavaScript, Python, SQL, Java, and many more."
+#    - type: id_webdesign
+#      title: "W3Schools"
+#      url: "https://www.w3schools.com/"
+#      info: "W3Schools offers free online tutorials, references and exercises in all the major languages of the web. Covering popular subjects like HTML, CSS, JavaScript, Python, SQL, Java, and many more."
 ---

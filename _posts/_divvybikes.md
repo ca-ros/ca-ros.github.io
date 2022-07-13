@@ -18,10 +18,8 @@ Data sources:
 - *PostgreSQL*
 - *RStudio*
 
-<details><summary>Skills applied</summary>
-<p>
-
-- Git - version control
+<sub>Skills utilized:</sub>
+- Git
 - Excel
 
   - Conditional Formatting
@@ -49,47 +47,10 @@ Data sources:
   - ROUND (percentage)
 - R
 
-  -
-  -
-  -
-  -
-  -
-- googling hard hehe
-</p></details>
+  - dplyr
+  - readr
 
-<h2 align = "center">Table of Content</h2>
-
-I. [Setting up SQL Environment](#setting-up-sql-environment)
-
-II. [Combining Data](#combining-data)
-
-- [2013](#2013)
-- [2014](#2014)
-- [2015](#2015)
-- [2016](#2016)
-- [2017](#2017)
-- [2018](#2018)
-- [2019](#2019)
-- [2020](#2020)
-- [2021](#2021)
-
-III. [Trips table](#trips-table)
-
-- [First table: trips_p1](#first-table-trips_p1)
-- [Second table: trips_p2](#second-table-trips_p2)
-- [Combining tables: trips](#combine-table-trips)
-- [NULL values](#null-values)
-
-IV. [Stations table](#stations-table)
-
-- [Missing stations](#missing-stations)
-- [Cleaning](#cleaning)
-
-## h2 align
-
-## h3 align
-
-<h2 align = "center">Setting up SQL Environment</h2>
+<h2 align = "center">Set up SQL Environment</h2>
 
 The SQL database that I used in this analysis is [PostgreSQL](https://www.postgresql.org) and I used [pgAdmin 4](https://www.pgadmin.org/download/) as the database tool.
 
@@ -790,9 +751,6 @@ In order to analyze the table, the following is done.
 
     - **Example**:
 
-      <details><summary>Click Me!</summary>
-      <p>
-
       ID = **17**, name = **Wood St & Division St**. Use [Google Maps](https://www.google.com/maps) to validate the station_name.
 
       - Search Chicago to focus the search in Chicago City.
@@ -818,8 +776,6 @@ In order to analyze the table, the following is done.
 
       ![sample excel](https://snipboard.io/ixN0TV.jpg)
 
-      </p>
-      </details>
 
 &nbsp;
 
@@ -972,38 +928,35 @@ Export the result as [trips_p2_stations.csv](https://github.com/ca-ros/divvy-bik
     - **Column F**: *Text that contains* > "*y*" with **Green Fill with Dark Green Text**.
 9. Validate the **new_name** column by searching each names in [Google Maps](https://www.google.com/maps) and locate nearby **divvy-stations**.
 
-    <details><summary>Validating sample:</summary>
-    <p>
+    - Validating sample:
+    
+        - station_id = 17
+        - Either a missing station_id **17** or station_name **Wood St & Division St**.
 
-    - station_id = 17
-    - Either a missing station_id **17** or station_name **Wood St & Division St**.
+        Using [Google Maps](https://www.google.com/maps) to validate the station_name.
 
-    Using [Google Maps](https://www.google.com/maps) to validate the station_name.
+        - Search **Chicago** to focus the search in Chicago City.
 
-    - Search **Chicago** to focus the search in Chicago City.
+        ![Chicago](https://snipboard.io/vYIsW9.jpg)
 
-    ![Chicago](https://snipboard.io/vYIsW9.jpg)
+        - Enter the station_name, **Wood St & Division St**, and *press Enter*.
+        - Click **Nearby** and search **divvy**, to search nearby divvy-bike stations.
 
-    - Enter the station_name, **Wood St & Division St**, and *press Enter*.
-    - Click **Nearby** and search **divvy**, to search nearby divvy-bike stations.
+        ![17](https://snipboard.io/n4qvdG.jpg)
 
-    ![17](https://snipboard.io/n4qvdG.jpg)
+        - Hover over to the nearest station to view the station name.
 
-    - Hover over to the nearest station to view the station name.
+        ![17.2](https://snipboard.io/LHBqnm.jpg)
 
-    ![17.2](https://snipboard.io/LHBqnm.jpg)
+        The nearest station is **Honore St & Division St**.
 
-    The nearest station is **Honore St & Division St**.
+        > Upon checking the **Stations** table on ID number 17, we can confirm that station_id 17 is Honore St & Division St.
 
-    > Upon checking the **Stations** table on ID number 17, we can confirm that station_id 17 is Honore St & Division St.
+        ![17 excel](https://snipboard.io/najrpI.jpg)
 
-    ![17 excel](https://snipboard.io/najrpI.jpg)
+        > Thus, **Wood St & Division St** is a wrong station name and must be replaced with correct name **Honore St & Division St**. You can also notice under **changes** column, it says **name**, which means **name change**.
 
-    > Thus, **Wood St & Division St** is a wrong station name and must be replaced with correct name **Honore St & Division St**. You can also notice under **changes** column, it says **name**, which means **name change**.
-
-    ![sample excel](https://snipboard.io/ixN0TV.jpg)
-
-    </p></details>
+        ![sample excel](https://snipboard.io/ixN0TV.jpg)
 
 &nbsp;  
 

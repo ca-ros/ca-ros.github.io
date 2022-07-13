@@ -34,6 +34,6 @@ img: ":about.jpg"
 #published: false
 ---
 
-Hi, my name is Chris Arthur Rosaroso. In 2020, I received my bachelor's degree in engineering (Mechanical Engineering, Technological University of the Philippines, Manila City). I have a life long passion about data and curiosity that fuels it. My passion for data science lies on the path of 3 meaning outcomes: *discovery*, *insight*, *innovation*.
+Hi, my name is Chris Arthur Rosaroso, based in the Philippines. In 2020, I received my bachelor's degree in engineering (Mechanical Engineering, Technological University of the Philippines, Manila City). In 2022, I started my journey to Data Science. I have a life long passion about data and a curiosity that fuels it. My passion for data science lies on the path of 3 meaning outcomes: *discovery*, *insight*, *innovation*.
 
 I believe that data tells us more than just numbers, it helps us uncover stories about certain events and timelines where we can leverage into valuable actionable insights. I am focusing on marketing analytics as my niche, where I help the brand with valuable insights using the customer data. As COVID hits during my graduation, I was introduced to remote jobs. I eventually migrated to data science by getting certified. I am now skilled in Excel, SQL, R, and Tableau, and am currently learning Python.

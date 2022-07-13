@@ -37,6 +37,8 @@ date: 2022-07-13 08:11:06 +0900
 #published: false
 ---
 
+<!-- outline-start -->
+
 <h1 align = "center">Data Wrangling</h1>
 
 Data sources:
@@ -1476,6 +1478,9 @@ WHERE s.name = c.old_name;
 
 -- END
 
+{{tmp_content[1]}}
+
 <!-- outline-end -->
 
+---
 

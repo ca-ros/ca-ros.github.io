@@ -62,9 +62,9 @@ page_data:
   list:
     # divvy bikes
     - type: divvy
-      title: "Github repo"
+      title: "Repository"
       url: "https://github.com/ca-ros/divvy-bikeshare"
-      info: "Github repository location which contains all the documentation and files used in the analysis."
+      info: "Github repository which contains all the documentation and files used in the analysis."
     - type: divvy
       title: "Company"
       url: "https://divvybikes.com"
@@ -76,11 +76,15 @@ page_data:
     - type: divvy
       title: "Stations table"
       url: "https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq"
-      info: "Table which contains additional information about the stations. These includes station ID, dock max capacity, and coordinates. This data is downloaded at Chicago Open Data Portal."
+      info: "Contains additional stations information. These includes station ID, dock max capacity, and coordinates. Data is downloaded at Chicago Open Data Portal."
     - type: divvy
       title: "Dashboard"
       url: ""
-      info: "Interactive dashboard created on tableau to analyze the data."
+      info: "Interactive dashboard created on tableau to analyze the data. (Currently in progresss)"
+    - type: divvy
+      title: "Data wrangling"
+      url: "https://github.com/ca-ros/divvy-bikeshare/blob/master/data%20wrangling/README.md"
+      info: "Documentation about data wrangling. Skills utilized are R, SQL and Excel."
 
     # programming
 #    - type: id_programming

@@ -1,7 +1,7 @@
 ---
 # multilingual page pair id, this must pair with translations of this page. (This name must be unique)
 lng_pair: projects
-title: Divvy bikes: data cleaning documentation
+title: Divvy bikes data cleaning documentation
 
 # post specific
 # if not specified, .name will be used from _data/owner/[language].yml

@@ -54,11 +54,11 @@ greetings_replace: "Hello."
 
 
 # replace text with data.lang[language].constants.welcome
-welcome_replace: "$site_welcome"
+#welcome_replace: "$site_welcome"
 welcome_replace: "Welcome"
 
 # replace text with data.lang[language].constants.sample
-sample_replace: "This is the **portfolio** & **blog** of **Chris Arthur Rosaroso**, Philippine-based **Data Analyst**."
+sample_replace: "I'm shy, please come say hi"
 
 ###########################################################
 #                Search

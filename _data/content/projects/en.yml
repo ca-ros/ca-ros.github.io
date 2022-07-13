@@ -38,9 +38,10 @@ page_data:
 
   list:
     # example
-    - type: sql
-      type: excel
-      type: r
+    - type: 
+        - sql
+        - excel
+        - r
       project_name: "SQL Data Cleaning (Divvy bikes data)"
       project_excerpt: "SQL, Excel, R"
       img: ":project1_thumb.jpg"

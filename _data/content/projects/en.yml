@@ -24,7 +24,7 @@ page_data:
     - title: "Python"
       type: python
       color: "#e04fee"
-    - title: "Dashboards"
+    - title: "Data Visualization"
       type: dashboards
       color: "#2432b2"
 
@@ -38,7 +38,7 @@ page_data:
 
   list:
     # example
-    - type: sql, excel, r
+    - type: [sql, excel, r]
       project_name: "SQL Data Cleaning (Divvy bikes data)"
       project_excerpt: "SQL, Excel, R"
       img: ":project1_thumb.jpg"

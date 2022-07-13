@@ -167,7 +167,7 @@ privacy-policy:
 constants:
   greetings: Hello
   welcome: Welcome
-  sample: Sample
+  sample: "I'm shy, please come say hi"
 
 # for cookie consent
 cookie_consent:

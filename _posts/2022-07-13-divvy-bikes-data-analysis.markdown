@@ -1478,8 +1478,6 @@ WHERE s.name = c.old_name;
 
 -- END
 
-{{tmp_content[1]}}
-
 <!-- outline-end -->
 
 ---

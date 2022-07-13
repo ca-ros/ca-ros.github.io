@@ -2,10 +2,10 @@
 # Owner's Personal Information
 ###########################################################
 # This is your brand name
-brand: "Chris"
+brand: "Chris Arthur Rosaroso"
 
 # text below the brand name
-brand_sub_text: "Data Analyst | Mechanical Engineer"
+brand_sub_text: "A data science enthusiast, business and data anaylst, research and development advocate."
 
 # used for seo meta post author (if it's not defined in post)
 name: "Chris Arthur Rosaroso"
@@ -13,13 +13,13 @@ name: "Chris Arthur Rosaroso"
 # home page top header texts
 home:
   # you can also use $site_brand, $site_greetings, $site_welcome in line1 and line2 for replacing texts.
-  top_header_line1: "Hello, I am"
+  top_header_line1: "Chris' Data"
   # if commented, top header will be a single line
-  top_header_line2: "Working as Data Analyst"
-
+  top_header_line2: "Analytics Portfolio"
+  
 # about page sub title
 about:
-  sub_title: "Chris Arthur Rosaroso"
+  sub_title: "Data Analyst | Mechanical Engineer"
 
 # if you don't want to add copyright year, comment or leave it blank.
 # the year during which the claimed copyright for the work was first asserted.

@@ -34,4 +34,6 @@ img: ":about.jpg"
 #published: false
 ---
 
-Chris Arthur Rosaroso is a
+Hi, my name is Chris Arthur Rosaroso. In 2020, I received my bachelor's degree in engineering (Mechanical Engineering, Technological University of the Philippines, Manila City).
+
+I believe that data tells us more than just numbers, it helps us uncover stories about certain events and timelines where we can leverage to into valuable actionable insights. I am focusing on marketing analytics as my niche, where I help the brand with valuable insights using the customer data. As COVID hits during my graduation, I was introduced to remote jobs. I eventually migrated to data science by getting certified. I am now skilled in Excel, SQL, R, and Tableau, and am currently learning Python.

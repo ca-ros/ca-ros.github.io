@@ -4,17 +4,31 @@
 ###########################################################
 page_data:
   main:
-    header: "Porfolio"
-    info: "Projects and Dashboards"
+    header: "Projects"
+    info: ""
     text_color: "white"
     # if you don't want to use background image, comment it. back_color will be activated.
     img: ":projects-heading.jpg"
     back_color: "lightblue"
 
   category:
-    - title: "Projects"
-      type: portfolio
+    - title: "SQL"
+      type: sql
       color: "gray"
+    - title: "Excel"
+      type: excel
+      color: "#62b462"
+    - title: "R"
+      type: r
+      color: "#2FD0ED"
+    - title: "Python"
+      type: python
+      color: "#e04fee"
+    - title: "Dashboards"
+      type: dashboards
+      color: "#2432b2"
+
+
 #    - title: "Picture"
 #      type: id_picture
 #      color: "#62b462"
@@ -24,12 +38,12 @@ page_data:
 
   list:
     # example
-    - type: portfolio
-      project_name: "Divvy-bikeshare"
-      project_excerpt: "Examples"
+    - type: sql, excel, r
+      project_name: "SQL Data Cleaning (Divvy bikes data)"
+      project_excerpt: "SQL, Excel, R"
       img: ":project1_thumb.jpg"
       img_title: "divvy-logo"
-      date: "2022-05-17"
+      date: "2022-07-12"
       post: |
 
         <h1 align = "center">Data Wrangling</h1>

@@ -165,9 +165,9 @@ privacy-policy:
 
 # constants to be replaced for
 constants:
-  greetings: Hello
+  greetings: Hi I'm Chris Arthur Rosaroso
   welcome: Welcome
-  sample: Sample
+  sample: A data science enthusiast, business and data anaylst, research and development advocate.
 
 # for cookie consent
 cookie_consent:

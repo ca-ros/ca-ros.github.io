@@ -1195,7 +1195,7 @@ Before combining both tables, some changes has to be made first. By checking the
   - rename column: **trip_id** to **ride_id**
 - **trips_p2**
   - remove columns: **start_lat**, **start_lng**, **end_lat** & **end_lng**.
-  - fill missing data: **duration** by using start_time and end_time.
+  - fill missing data: **trip_duration** by using start_time and end_time.
   - change data type of columns **start_station_id** & **end_station_id**: from *varchar* to *bigint*.
 
 &nbsp;

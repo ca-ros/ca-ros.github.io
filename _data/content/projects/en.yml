@@ -1491,7 +1491,7 @@ page_data:
 
         -- END Data Wrangling
     # picture
-    - type: r
+    - type: excel
       project_name: "Example Project"
       project_excerpt: "Picture"
       img: ":project2_thumb.jpg"

@@ -1491,14 +1491,14 @@ page_data:
 
         -- END Data Wrangling
     # picture
-    - type: id_picture
+    - type: r
       project_name: "Example Project"
       project_excerpt: "Picture"
       img: ":project2_thumb.jpg"
       img_title: "img title2"
       date: "2021-04-23"
       post: {{_data/content/projects}}_divvybikes.md     
-    - type: id_quote
+    - type: r
       project_name: "Example Project"
       project_excerpt: "Mae West"
       img: ":project1_thumb.jpg"

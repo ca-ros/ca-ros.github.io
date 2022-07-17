@@ -1497,7 +1497,7 @@ page_data:
       img: ":project2_thumb.jpg"
       img_title: "img title2"
       date: "2021-04-23"
-      post: _divvybikes.md     
+      post: {{_data/content/projects}}_divvybikes.md     
     - type: id_quote
       project_name: "Example Project"
       project_excerpt: "Mae West"

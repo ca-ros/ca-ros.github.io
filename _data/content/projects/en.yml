@@ -45,8 +45,12 @@ page_data:
       img_title: "divvy-logo"
       date: "2022-07-12"
       post: |
-
+      
         <h1 align = "center">Data Wrangling</h1>
+
+        <!-- readme -->
+
+        <!-- outline-start -->
 
         Data sources:
         - [Divvy bikes](https://divvybikes.com), download the raw data-sets [here](https://divvy-tripdata.s3.amazonaws.com/index.html)
@@ -55,6 +59,8 @@ page_data:
           - Download the version I used [here](https://github.com/ca-ros/divvy-bikeshare/blob/master/data%20wrangling/csv%20files/stations_raw/Divvy_Bicycle_Stations.csv). June 28, 2022
 
         > The Stations table continues to get updates. I noticed some changes since I downloaded the data on May 15, 2022 and redownload on June 28, 2022. When I check the site, there is an update on May 18, 2022 hence the change in data.
+
+        <!-- outline-end -->
 
         <sub>Tools used:</sub>
         - *PostgreSQL*
@@ -1484,3 +1490,15 @@ page_data:
         ```
 
         -- END Data Wrangling     
+
+  list:
+    # example
+    - type: sql
+      project_name: "SQL Data Cleaning (Divvy bikes data)"
+      project_excerpt: "SQL, Excel, R"
+      img: ":project1_thumb.jpg"
+      img_title: "divvy-logo"
+      date: "2022-07-12"
+      post: |
+
+        

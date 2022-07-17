@@ -1489,4 +1489,13 @@ page_data:
         WHERE s.name = c.old_name;
         ```
 
-        -- END Data Wrangling     
+        -- END Data Wrangling
+
+    # picture
+    - type: id_picture
+      project_name: "Example Project"
+      project_excerpt: "Picture"
+      img: ":project2_thumb.jpg"
+      img_title: "img title2"
+      date: "2021-04-23"
+      post: _divvybikes.md     

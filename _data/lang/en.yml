@@ -166,7 +166,7 @@ privacy-policy:
 # constants to be replaced for
 constants:
   greetings: Hello
-  welcome: Welcome
+  welcome: Check out my Portfolio!
   sample: "Good to see you here!"
 
 # for cookie consent

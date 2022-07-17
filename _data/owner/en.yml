@@ -13,9 +13,9 @@ name: "Chris Arthur Rosaroso"
 # home page top header texts
 home:
   # you can also use $site_brand, $site_greetings, $site_welcome in line1 and line2 for replacing texts.
-  top_header_line1: "Data Science Portfolio"
+  top_header_line1: "Data Science"
   # if commented, top header will be a single line
-  #top_header_line2: "Analytics Portfolio"
+  top_header_line2: "Portfolio"
   
 # about page sub title
 about:

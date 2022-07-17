@@ -1494,8 +1494,8 @@ page_data:
   list:
     # example
     - type: sql
-      project_name: "SQL Data Cleaning (Divvy bikes data)"
-      project_excerpt: "SQL, Excel, R"
+      project_name: "Markdown 1"
+      project_excerpt: "excel"
       img: ":project1_thumb.jpg"
       img_title: "divvy-logo"
       date: "2022-07-12"
@@ -1504,3 +1504,13 @@ page_data:
         {%- capture readme_file -%}{%- include_relative _divvybikes.md -%}{%- endcapture -%}
         {%- assign tmp_content = readme_file | split: "<!-- readme -->" -%}
         {{tmp_content[1]}}
+
+  list:
+    # example
+    - type: sql
+      project_name: "Markdown 2"
+      project_excerpt: "md"
+      img: ":project1_thumb.jpg"
+      img_title: "divvy-logo"
+      date: "2022-07-12"
+      post: {{_data.content.projects}}_divvybikes.md

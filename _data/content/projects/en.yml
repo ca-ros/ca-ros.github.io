@@ -66,45 +66,6 @@ page_data:
         - *PostgreSQL*
         - *RStudio*
 
-        <details><summary>Skills applied</summary>
-        <p>
-
-        - Git - version control
-        - Excel
-
-          - Conditional Formatting
-          - Data filter
-          - VLOOKUP
-          - Pivot table
-          - IF/ IFNA
-        - SQL 
-
-          - CREATE TABLE
-          - CREATE DB
-          - SELECT DISTINCT
-          - UPDATE TABLE
-          - HAVING
-          - LIKE
-          - WILDCARDS
-          - ALTER TABLE/ ALTER COLUMN
-          - IN
-          - CASE
-          - CAST
-          - EXTRACT: YEAR, EPOCH
-          - JOINS
-          - UNION
-          - SUB QUERY
-          - ROUND (percentage)
-        - R
-
-          -
-          -
-          -
-          -
-          -
-        - googling hard hehe
-        </p></details>
-
         <h2 align = "center">Table of Content</h2>
 
         I. [Setting up SQL Environment](#setting-up-sql-environment)
@@ -134,7 +95,7 @@ page_data:
         - [Cleaning](#cleaning)
 
 
-        <h2 align = "center">Setting up SQL Environment</h2>
+        <h2 align = "center" id="setting-up-sql-environment">Setting up SQL Environment</h2>
 
         The SQL database that I used in this analysis is [PostgreSQL](https://www.postgresql.org) and I used [pgAdmin 4](https://www.pgadmin.org/download/) as the database tool.
 

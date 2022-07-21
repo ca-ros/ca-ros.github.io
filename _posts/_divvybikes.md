@@ -523,7 +523,7 @@ Download the modules here:
 - [divvy.bas](https://github.com/ca-ros/divvy-bikeshare/blob/master/data%20wrangling/vba/divvy.bas)
 - [newtables.bas](https://github.com/ca-ros/divvy-bikeshare/blob/master/data%20wrangling/vba/newtables.bas)
 
-**VBScripts**:
+**VBScripts**
 
 - divvy.bas
 

@@ -2,6 +2,8 @@
 
 <!-- readme -->
 
+{% raw %}
+
 <!-- outline-start -->
 
 <h2 align = "center">Introduction</h2>
@@ -1383,3 +1385,5 @@ WHERE s.name = c.old_name;
 
 - [Trips_table](https://www.dropbox.com/s/qb3ndglnmf7gwh5/trips.csv?dl=0) (4.5 gb)
 - [Stations_table](https://github.com/ca-ros/divvy-bikeshare/blob/master/data%20wrangling/csv%20files/stations_cleaning/Stations_cleaned.csv) (120 kb)
+
+{% endraw %}

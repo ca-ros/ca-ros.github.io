@@ -37,8 +37,6 @@ date: 2022-07-13 08:11:06 +0900
 #published: false
 ---
 
-{% raw %}
 {%- capture readme_file -%}{%- include_relative _divvybikes.md -%}{%- endcapture -%}
 {%- assign tmp_content = readme_file | split: "<!-- readme -->" -%}
 {{tmp_content[1]}}
-{% endraw %}

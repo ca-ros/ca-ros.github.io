@@ -63,6 +63,11 @@ kramdown:
 plugins:
   - jekyll-paginate
   - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
 
 # since GitHub Pages runs jekyll with "--safe" flag, we need to add supported plugins in here. (only github supported plugins are allowed)
 whitelist:

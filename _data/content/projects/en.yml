@@ -38,9 +38,12 @@ page_data:
 
   list:
     # example
-    - type: sql
-      project_name: "SQL data wrangling (Divvy bikes data)"
-      project_excerpt: "SQL, Excel, R"
+    - type: 
+        - sql
+        - excel
+        - r
+      project_name: "SQL data wrangling (Divvy bikes)"
+      project_excerpt: "This is a documentation of data wrangling process of biketrips dataset. "
       img: ":project1_thumb.jpg"
       img_title: "divvy-logo"
       date: "2022-07-12"
@@ -1149,3 +1152,21 @@ page_data:
 
         - [Trips_table](https://www.dropbox.com/s/qb3ndglnmf7gwh5/trips.csv?dl=0) (4.5 gb)
         - [Stations_table](https://github.com/ca-ros/divvy-bikeshare/blob/master/data%20wrangling/csv%20files/stations_cleaning/Stations_cleaned.csv) (120 kb)
+
+    - type: python
+      project_name: "Biketrips data analysis (Divvy bikes)"
+      project_excerpt: "Data anaylsis of biketrips dataset using Python. "
+      img: ":project1_thumb.jpg"
+      img_title: "divvy-logo"
+      date: "2022-07-12"
+      post: |
+        Coming soon 😎
+
+    - type: dashboards
+      project_name: "Dashboard (Divvy bikes)"
+      project_excerpt: "Interactive dashboard of biketrips dataset using Tableau. "
+      img: ":project1_thumb.jpg"
+      img_title: "divvy-logo"
+      date: "2022-07-12"
+      post: |
+        Coming soon 😎

@@ -40,7 +40,6 @@ Questions relating to trip data should be sent to <a href = "mailto:bike-data@ly
 - [Notepad++](https://notepad-plus-plus.org/downloads/)
 - [PostgreSQL](https://www.postgresql.org/download/)
 - [RStudio](https://www.rstudio.com/products/rstudio/download/)
-- [Python](https://www.python.org/downloads/)
 
 <h2 align = "center">Table of Content</h2>
 
@@ -62,8 +61,8 @@ II. [Combining Data](#combining-data)
 III. [Trips table](#trips-table)
 
 - [Preparation](#preparation)
-- [Show the Developer tab](#show-the-developer-tab)
 - [Import Stations table](#import-stations-table)
+- [Enable Excel Macros](#enable-excel-macros)
 - [First table: trips_p1](#first-table-trips_p1)
   - [Process](#process)
   - [Clean Macros](#clean-macros)
@@ -158,8 +157,6 @@ Steps:
 3. After extracting the zip files, compile separately the bike-trips data and the stations data included in that folder. Name the folder as the part it represents *e.g. trips_p1*.
 4. Start compiling the data, **trips_p1** folder must contain data from year *2013-2019* and **trips_p2** folder must contain data from year *2020-2021*.
 
-> There are two (2) options in merging csv files, by using **R** or **Python**. Choose base on your preference.
-
 <h3 id = "load-the-libraries">Load the libraries</h3>
 
 *Using RStudio*
@@ -169,13 +166,6 @@ install.library(tidyverse)
 library(tidyverse)
 ```
 
-*Using Python*
-
-```python
-import pandas as pd
-import glob
-import os
-```
 
 <h3 id = "inspection">Inspection</h3>
 
@@ -325,30 +315,7 @@ Steps:
 9. **Rename columns**: Station Name = **name**, Total Docks = **docks**, Status = **in_service**, and Location = **coordinate**.
 12. Save as [Stations.csv](https://github.com/ca-ros/divvy-bikeshare/blob/master/data%20wrangling/csv%20files/stations_cleaning/Stations.csv).
 
-
-<h3 id = "show-the-developer-tab">Show the Developer tab</h3>
-
-The **Developer** tab isn't displayed by default, but you can add it to the ribbon.
-
-Steps:
-1. On the **File** tab, go to **Options** > **Customize Ribbon**.
-2. Under **Customize the Ribbon** and under **Main tabs**, select the **Developer** check box.
-
-After you show the tab, the Developer tab stays visible, unless you clear the check box or have to reinstall a Microsoft Office program.
-
-The Developer tab is the place to go when you want to do or use the following:
-- Write macros.
-- Run macros that you previously recorded.
-- Use XML commands.
-- Use ActiveX controls.
-- Create applications to use with Microsoft Office programs.
-- Use form controls in Microsoft Excel.
-- Work with the ShapeSheet in Microsoft Visio.
-- Create new shapes and stencils in Microsoft Visio.
-
-A macro is a series of commands that you can use to automate a repeated task, and can be run when you have to perform the task.
-
-> Read [Show the Developer tab](https://support.microsoft.com/en-us/topic/show-the-developer-tab-e1192344-5e56-4d45-931b-e5fd9bea2d45) and [Macros in Office files](https://support.microsoft.com/en-us/office/macros-in-office-files-12b036fd-d140-4e74-b45e-16fed1a7e5c6).
+> P.S. You can open normally the csv file using Excel but it will mess-up the station IDs.
 
 <h3 id = "import-stations-table">Import Stations table</h3>
 
@@ -378,7 +345,30 @@ FROM 'D:/Github/divvy-bikeshare/csv files/stations/Stations.csv'
 DELIMITER ',' CSV HEADER;
 ```
 
-> P.S. You can open normally the csv file using Excel but it will mess-up the station IDs.
+<h3 id = "enable-excel-macros">Enable Excel Macros</h3>
+
+Excel macros is under Developer tab in Excel. The **Developer** tab isn't displayed by default, but you can add it to the ribbon.
+
+Steps:
+1. On the **File** tab, go to **Options** > **Customize Ribbon**.
+2. Under **Customize the Ribbon** and under **Main tabs**, select the **Developer** check box.
+
+After you show the tab, the Developer tab stays visible, unless you clear the check box or have to reinstall a Microsoft Office program.
+
+The Developer tab is the place to go when you want to do or use the following:
+- Write macros.
+- Run macros that you previously recorded.
+- Use XML commands.
+- Use ActiveX controls.
+- Create applications to use with Microsoft Office programs.
+- Use form controls in Microsoft Excel.
+- Work with the ShapeSheet in Microsoft Visio.
+- Create new shapes and stencils in Microsoft Visio.
+
+A macro is a series of commands that you can use to automate a repeated task, and can be run when you have to perform the task.
+
+> Read [Show the Developer tab](https://support.microsoft.com/en-us/topic/show-the-developer-tab-e1192344-5e56-4d45-931b-e5fd9bea2d45) and [Macros in Office files](https://support.microsoft.com/en-us/office/macros-in-office-files-12b036fd-d140-4e74-b45e-16fed1a7e5c6).
+
 
 &nbsp;
 
@@ -523,6 +513,279 @@ Download the modules here:
 - [divvy.bas](https://github.com/ca-ros/divvy-bikeshare/blob/master/data%20wrangling/vba/divvy.bas)
 - [newtables.bas](https://github.com/ca-ros/divvy-bikeshare/blob/master/data%20wrangling/vba/newtables.bas)
 
+**VBScripts**:
+
+- divvy.bas
+
+```vb
+Sub divvy()
+'
+' divvy Macro
+'
+' Keyboard Shortcut: Ctrl+Shift+Y
+'
+    ActiveSheet.Name = "trips_stations"
+    Range("A1").Value = "old_id"
+    Range("B1").Value = "old_name"
+    Range("C1").Value = "new_id"
+    Range("D1").Value = "new_name"
+    Range("E1").Value = "changes"
+    Range("F1").Value = "verified"
+    ActiveWorkbook.Queries.Add Name:="Stations", Formula:= _
+        "let" & Chr(13) & "" & Chr(10) & "    Source = Csv.Document(File.Contents(""C:\Users\Chris\Documents\GitHub\divvy-bikeshare\data wrangling\csv files\stations_cleaning\Stations.csv""),[Delimiter="","", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None])," & Chr(13) & "" & Chr(10) & "    #""Change Type"" = Table.TransformColumnTypes(Source,{{""Column1"", type text}, {""Column2"", type text}, {""Column3"", type text}, {""" & _
+        "Column4"", type text}, {""Column5"", type text}, {""Column6"", type text}, {""Column7"", type text}})" & Chr(13) & "" & Chr(10) & "in" & Chr(13) & "" & Chr(10) & "    #""Change Type"""
+    ActiveWorkbook.Worksheets.Add
+    With ActiveSheet.ListObjects.Add(SourceType:=0, Source:= _
+        "OLEDB;Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=Stations;Extended Properties=""""" _
+        , Destination:=Range("$A$1")).QueryTable
+        .CommandType = xlCmdSql
+        .CommandText = Array("SELECT * FROM [Stations]")
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = True
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .PreserveColumnInfo = True
+        .ListObject.DisplayName = "Stations"
+        .Refresh BackgroundQuery:=False
+    End With
+    ActiveSheet.Name = "Stations"
+    ActiveSheet.ListObjects("Stations").Unlist
+    Application.CommandBars("Queries and Connections").Visible = False
+    Rows("1:1").Select
+    Selection.Delete Shift:=xlUp
+    Cells.Style = "Normal"
+    Rows("1:1").Font.Bold = True
+    Columns("C:C").Select
+    Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+    Columns("A:A").Copy
+    Range("C1").Select
+    ActiveSheet.Paste
+    Application.CutCopyMode = False
+    Range("A1").Select
+    Columns("A:A").ColumnWidth = 13.43
+    Columns("B:B").ColumnWidth = 34
+    Columns("C:C").ColumnWidth = 8.57
+    Rows("1:1").Select
+    Selection.AutoFilter
+    Sheets("trips_stations").Select
+    Rows("1:1").Select
+    Selection.Font.Bold = True
+    With ActiveWindow
+        .SplitColumn = 0
+        .SplitRow = 1
+    End With
+    ActiveWindow.FreezePanes = True
+    Selection.AutoFilter
+    Columns("B:B").ColumnWidth = 36.14
+    Columns("C:C").EntireColumn.AutoFit
+    Columns("D:D").ColumnWidth = 34.29
+    Columns("E:E").EntireColumn.AutoFit
+    Columns("F:F").EntireColumn.AutoFit
+    ActiveCell.FormulaR1C1 = "old_id"
+    Range("C2").Select
+    With Selection
+        .Formula = "=IFNA(VLOOKUP(TEXT(B2,0),Stations!$B:$D,2,FALSE),""same"")"
+        .AutoFill Destination:=Range("C2:C" & Range("A" & Rows.Count).End(xlUp).Row)
+    End With
+    Range(Selection, Selection.End(xlDown)).Select
+    Range("D2").Select
+    With Selection
+        .Formula = "=IFNA(VLOOKUP(TEXT(A2,0),Stations!$A:$B,2,FALSE),""same"")"
+        .AutoFill Destination:=Range("D2:D" & Range("A" & Rows.Count).End(xlUp).Row)
+    End With
+    Range(Selection, Selection.End(xlDown)).Select
+    Range("E2").Select
+    With Selection
+        .Formula = "=IF(C2 = """", ""missing"", IF(AND(D2=""same"",C2=""same""),""missing"",IF(B2=D2,""same"",IF(AND(A2<>C2,D2=""same""),""id"",IF(AND(B2<>D2,C2=""same""),""name"",IF(AND(A2<>C2,B2<>D2),""both""))))))"
+        .AutoFill Destination:=Range("E2:E" & Range("A" & Rows.Count).End(xlUp).Row)
+    End With
+    Range(Selection, Selection.End(xlDown)).Select
+    Columns("A:A").Select
+    Selection.FormatConditions.AddUniqueValues
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    Selection.FormatConditions(1).DupeUnique = xlDuplicate
+    With Selection.FormatConditions(1).Font
+        .Color = -16383844
+        .TintAndShade = 0
+    End With
+    With Selection.FormatConditions(1).Interior
+        .PatternColorIndex = xlAutomatic
+        .Color = 13551615
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).StopIfTrue = False
+    Columns("B:B").Select
+    Selection.FormatConditions.AddUniqueValues
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    Selection.FormatConditions(1).DupeUnique = xlDuplicate
+    With Selection.FormatConditions(1).Font
+        .Color = -16383844
+        .TintAndShade = 0
+    End With
+    With Selection.FormatConditions(1).Interior
+        .PatternColorIndex = xlAutomatic
+        .Color = 13551615
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).StopIfTrue = False
+    Columns("F:F").Select
+    Selection.FormatConditions.Add Type:=xlTextString, String:="y", _
+        TextOperator:=xlContains
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    With Selection.FormatConditions(1).Font
+        .Color = -16752384
+        .TintAndShade = 0
+    End With
+    With Selection.FormatConditions(1).Interior
+        .PatternColorIndex = xlAutomatic
+        .Color = 13561798
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).StopIfTrue = False
+    Columns("C:C").Select
+    Selection.FormatConditions.Add Type:=xlTextString, String:="same", _
+        TextOperator:=xlContains
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    With Selection.FormatConditions(1).Font
+        .Color = -16752384
+        .TintAndShade = 0
+    End With
+    With Selection.FormatConditions(1).Interior
+        .PatternColorIndex = xlAutomatic
+        .Color = 13561798
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).StopIfTrue = False
+    Columns("D:D").Select
+    Selection.FormatConditions.Add Type:=xlTextString, String:="same", _
+        TextOperator:=xlContains
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    With Selection.FormatConditions(1).Font
+        .Color = -16752384
+        .TintAndShade = 0
+    End With
+    With Selection.FormatConditions(1).Interior
+        .PatternColorIndex = xlAutomatic
+        .Color = 13561798
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).StopIfTrue = False
+    Columns("E:E").Select
+    Selection.FormatConditions.Add Type:=xlTextString, String:="missing", _
+        TextOperator:=xlContains
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    With Selection.FormatConditions(1).Font
+        .Color = -16383844
+        .TintAndShade = 0
+    End With
+    With Selection.FormatConditions(1).Interior
+        .PatternColorIndex = xlAutomatic
+        .Color = 13551615
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).StopIfTrue = False
+    Selection.FormatConditions.Add Type:=xlTextString, String:="name", _
+        TextOperator:=xlContains
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    With Selection.FormatConditions(1).Font
+        .Color = -16754788
+        .TintAndShade = 0
+    End With
+    With Selection.FormatConditions(1).Interior
+        .PatternColorIndex = xlAutomatic
+        .Color = 10284031
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).StopIfTrue = False
+    Selection.FormatConditions.Add Type:=xlTextString, String:="id", _
+        TextOperator:=xlContains
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    With Selection.FormatConditions(1).Font
+        .Color = -16752384
+        .TintAndShade = 0
+    End With
+    With Selection.FormatConditions(1).Interior
+        .PatternColorIndex = xlAutomatic
+        .Color = 13561798
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).StopIfTrue = False
+    Columns("E:E").Select
+    Selection.FormatConditions.Add Type:=xlTextString, String:="both", _
+        TextOperator:=xlContains
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    With Selection.FormatConditions(1).Font
+        .ThemeColor = xlThemeColorAccent1
+        .TintAndShade = -0.499984740745262
+    End With
+    With Selection.FormatConditions(1).Interior
+        .PatternColorIndex = xlAutomatic
+        .ThemeColor = xlThemeColorAccent1
+        .TintAndShade = 0.399945066682943
+    End With
+    Selection.FormatConditions(1).StopIfTrue = False
+    Sheets("trips_stations").Move Before:=Sheets(1)
+    Range("A1").Select
+End Sub
+```
+
+- newtables
+
+```vb
+Sub newtables()
+'
+' newtables Macro
+'
+
+'
+    ActiveSheet.Range("$A$1:$F" & Range("A" & Rows.Count).End(xlUp).Row).AutoFilter Field:=5, Criteria1:="missing"
+    Range("A:A,B:B").Select
+    Range("B1").Activate
+    Selection.Copy
+    Sheets.Add After:=ActiveSheet
+    ActiveSheet.Paste
+    Application.CutCopyMode = False
+    Columns("A:A").ColumnWidth = 36.43
+    Columns("B:B").ColumnWidth = 33.14
+    ActiveSheet.Name = "missing_stations"
+    Range("A1").Select
+    Sheets("trips_stations").Select
+    ActiveSheet.Range("$A$1:$F" & Range("A" & Rows.Count).End(xlUp).Row).AutoFilter Field:=5, Criteria1:="=both", _
+        Operator:=xlOr, Criteria2:="=id"
+    Range("B:B,C:C").Select
+    Range("C1").Activate
+    Selection.Copy
+    Sheets.Add After:=ActiveSheet
+    ActiveSheet.Paste
+    Application.CutCopyMode = False
+    Columns("A:A").ColumnWidth = 36.43
+    Columns("B:B").ColumnWidth = 33.14
+    ActiveSheet.Name = "id_changes"
+    Range("A1").Select
+    Sheets("trips_stations").Select
+    ActiveSheet.Range("$A$1:$F" & Range("A" & Rows.Count).End(xlUp).Row).AutoFilter Field:=5, Criteria1:="=both", _
+        Operator:=xlOr, Criteria2:="=name"
+    Range("B:B,D:D").Select
+    Range("D1").Activate
+    Selection.Copy
+    Sheets.Add After:=ActiveSheet
+    ActiveSheet.Paste
+    Application.CutCopyMode = False
+    Columns("A:A").ColumnWidth = 36.43
+    Columns("B:B").ColumnWidth = 33.14
+    ActiveSheet.Name = "name_changes"
+    Range("A1").Select
+    Sheets("trips_stations").Select
+    Range("A1").Select
+    ActiveSheet.Range("$A$1:$F$164").AutoFilter Field:=5
+End Sub
+```
 
 <h4 id = "sql-query">SQL Query</h4>
 
@@ -535,12 +798,12 @@ Since the smaller station ID is not used in **Stations** table, I used it as a n
 - id_changes_p1.csv
 
 ```sql
-CREATE TABLE bike_trips.id_changes_p1 (
+CREATE TABLE id_changes_p1 (
   old_name varchar, 
   new_id int);
 
 -- Import
-COPY bike_trips.id_changes_p1 (old_name, new_id)
+COPY id_changes_p1 (old_name, new_id)
 FROM 'D:/Github/divvy-bikeshare/csv files/stations/id_changes_p1.csv' 
 DELIMITER ',' CSV HEADER;
 ```
@@ -549,12 +812,12 @@ DELIMITER ',' CSV HEADER;
 
 ```sql
 -- Create table
-CREATE TABLE bike_trips.name_changes_p1 (
+CREATE TABLE name_changes_p1 (
   old_name varchar, 
   new_name varchar);
 
 -- Import
-COPY bike_trips.name_changes_p1 (old_name, new_name)
+COPY name_changes_p1 (old_name, new_name)
 FROM 'D:/Github/divvy-bikeshare/csv files/stations/name_changes_p1.csv' 
 DELIMITER ',' CSV HEADER;
 ```
@@ -564,18 +827,18 @@ DELIMITER ',' CSV HEADER;
 - start_station_id
 
 ```sql
-UPDATE bike_trips.trips_p1 as s
+UPDATE trips_p1 as s
 SET start_station_id = c.new_id
-FROM bike_trips.id_changes_p1 as c
+FROM id_changes_p1 as c
 WHERE s.start_station_name = c.old_name;
 ```
 
 - end_station_id
 
 ```sql
-UPDATE bike_trips.trips_p1 as s
+UPDATE trips_p1 as s
 SET end_station_id = c.new_id
-FROM bike_trips.id_changes_p1 as c
+FROM id_changes_p1 as c
 WHERE s.end_station_name = c.old_name;
 ```
 
@@ -583,17 +846,17 @@ WHERE s.end_station_name = c.old_name;
 
 ```sql
 -- start_station_name
-UPDATE bike_trips.trips_p1 as s
+UPDATE trips_p1 as s
 SET start_station_name = c.new_name
-FROM bike_trips.name_changes_p1 as c
+FROM name_changes_p1 as c
 WHERE s.start_station_name = c.old_name;
 ```
 
 ```sql
 -- end_station_name
-UPDATE bike_trips.trips_p1 as s
+UPDATE trips_p1 as s
 SET end_station_name = c.new_name
-FROM bike_trips.name_changes_p1 as c
+FROM name_changes_p1 as c
 WHERE s.end_station_name = c.old_name;
 ```
 
@@ -659,7 +922,7 @@ Export the result as [trips_p2_stations.csv](https://github.com/ca-ros/divvy-bik
           - Base - 2132 W Hubbard Warehouse
 
           ```sql
-          SELECT start_lat, start_lng FROM bike_trips.trips_p2
+          SELECT start_lat, start_lng FROM trips_p2
           WHERE start_station_name = 'Base - 2132 W Hubbard Warehouse'
 
           /*
@@ -672,7 +935,7 @@ Export the result as [trips_p2_stations.csv](https://github.com/ca-ros/divvy-bik
           - HUBBARD ST BIKE CHECKING (LBS-WH-TEST)
 
           ```sql
-          SELECT start_lat, start_lng FROM bike_trips.trips_p2
+          SELECT start_lat, start_lng FROM trips_p2
           WHERE start_station_name = 'HUBBARD ST BIKE CHECKING (LBS-WH-TEST)'
 
           /*
@@ -739,14 +1002,14 @@ Export the result as [trips_p2_stations.csv](https://github.com/ca-ros/divvy-bik
 
 ```sql
 -- Create table
-CREATE TABLE bike_trips.id_changes_p2 (
+CREATE TABLE id_changes_p2 (
   old_name varchar,
   new_id bigint);
 ```
 
 ```sql
 -- Import
-COPY bike_trips.id_changes_p2 (old_name, new_id)
+COPY id_changes_p2 (old_name, new_id)
 FROM 'D:/Github/divvy-bikeshare/csv files/stations/id_changes_p2.csv' 
 DELIMITER ',' CSV HEADER NULL 'null';
 ```
@@ -755,14 +1018,14 @@ DELIMITER ',' CSV HEADER NULL 'null';
 
 ```sql
 -- Create table
-CREATE TABLE bike_trips.name_changes_p2 (
+CREATE TABLE name_changes_p2 (
   old_name varchar,
   new_name varchar);
 ```
 
 ```sql
 -- Import
-COPY bike_trips.name_changes_p2 (old_name, new_name)
+COPY name_changes_p2 (old_name, new_name)
 FROM 'D:/Github/divvy-bikeshare/csv files/stations/name_changes_p2.csv' 
 DELIMITER ',' CSV HEADER NULL 'null';
 ```
@@ -772,7 +1035,7 @@ DELIMITER ',' CSV HEADER NULL 'null';
 - start_station_id
 
 ```sql
-UPDATE bike_trips.trips_p2
+UPDATE trips_p2
 SET start_station_id = CASE
   WHEN start_station_id = 'WL-008' THEN '57'
   WHEN start_station_id = '13221' THEN '61'
@@ -782,16 +1045,16 @@ WHERE start_station_id IN ('WL-008', '13221', '20215');
 ```
 
 ```sql
-UPDATE bike_trips.trips_p2 as s
+UPDATE trips_p2 as s
 SET start_station_id = CAST(c.new_id AS varchar)
-FROM bike_trips.id_changes_p2 as c
+FROM id_changes_p2 as c
 WHERE s.start_station_name = c.old_name;
 ```
 
 - end_station_id
 
 ```sql
-UPDATE bike_trips.trips_p2
+UPDATE trips_p2
 SET end_station_id = CASE
   WHEN end_station_id = 'WL-008' THEN '57'
   WHEN end_station_id = '13221' THEN '61'
@@ -801,9 +1064,9 @@ WHERE end_station_id IN ('WL-008', '13221', '20215');
 ```
 
 ```sql
-UPDATE bike_trips.trips_p2 as s
+UPDATE trips_p2 as s
 SET end_station_id = CAST(c.new_id AS varchar)
-FROM bike_trips.id_changes_p2 as c
+FROM id_changes_p2 as c
 WHERE s.end_station_name = c.old_name;
 ```
 
@@ -812,7 +1075,7 @@ WHERE s.end_station_name = c.old_name;
 - start_station
 
 ```sql
-UPDATE bike_trips.trips_p2
+UPDATE trips_p2
 SET start_station_name = CASE
   WHEN start_station_id = '57' THEN 'Clinton St & Roosevelt Rd'
   WHEN start_station_id = '61' THEN 'Wood St & Milwaukee Ave'
@@ -822,16 +1085,16 @@ WHERE start_station_id IN ('57', '61', '732');
 ```
 
 ```sql
-UPDATE bike_trips.trips_p2 as s
+UPDATE trips_p2 as s
 SET start_station_name = c.new_name
-FROM bike_trips.name_changes_p2 as c
+FROM name_changes_p2 as c
 WHERE s.start_station_name = c.old_name;
 ```
 
 - end_station
 
 ```sql
-UPDATE bike_trips.trips_p2
+UPDATE trips_p2
 SET end_station_name = CASE
   WHEN end_station_id = '57' THEN 'Clinton St & Roosevelt Rd'
   WHEN end_station_id = '61' THEN 'Wood St & Milwaukee Ave'
@@ -841,9 +1104,9 @@ WHERE end_station_id IN ('57', '61', '732');
 ```
 
 ```sql
-UPDATE bike_trips.trips_p2 as s
+UPDATE trips_p2 as s
 SET end_station_name = c.new_name
-FROM bike_trips.name_changes_p2 as c
+FROM name_changes_p2 as c
 WHERE s.end_station_name = c.old_name;
 ```
 
@@ -908,7 +1171,7 @@ Before combining both tables, some changes has to be made first. By checking the
 <h4 id = "sql-query-2">SQL Query</h4>
 
 ```sql
-CREATE TABLE bike_trips.trips AS
+CREATE TABLE trips AS
 SELECT 
   CAST(trip_id AS varchar) AS ride_id,
   CAST(null AS varchar) AS rideable_type,
@@ -923,7 +1186,7 @@ SELECT
   user_type,
   gender,
   birth_year
-FROM bike_trips.trips_p1
+FROM trips_p1
 UNION ALL
 SELECT
   ride_id,
@@ -939,7 +1202,7 @@ SELECT
   user_type,
   CAST(null AS text) AS gender,
   CAST(null AS int) AS birth_year
-FROM bike_trips.trips_p2;
+FROM trips_p2;
 ```
 
 <h3 align = "center" id = "null-values"><strong>NULL values</strong></h3>
@@ -974,17 +1237,17 @@ Divvy-bikeshare dataset contains 3.45% of NULL values. Since the percentage is s
 
 ```sql
 -- trips_p1: 24,426,783
-SELECT COUNT(*) FROM bike_trips.trips_p1;
+SELECT COUNT(*) FROM trips_p1;
 
 -- trips_p2: 9,136,746
-SELECT COUNT(*) FROM bike_trips.trips_p2;
+SELECT COUNT(*) FROM trips_p2;
 
 -- total: 33,563,529
-SELECT COUNT(*) FROM bike_trips.trips;
+SELECT COUNT(*) FROM trips;
 
 -- total NULL records: 1,158,190
 SELECT CAST(COUNT(*) AS numeric) 
-  FROM bike_trips.trips_p2
+  FROM trips_p2
   WHERE (start_station_name IS NULL 
   AND start_station_id IS NULL)
   OR (end_station_name IS NULL
@@ -997,14 +1260,14 @@ SELECT CAST(COUNT(*) AS numeric)
 -- trips_p1
 SELECT round(100 * 
  (SELECT CAST(COUNT(*) AS numeric) 
-  FROM bike_trips.trips_p1
+  FROM trips_p1
   WHERE (start_station_name IS NULL 
   AND start_station_id IS NULL)
   OR (end_station_name IS NULL
   AND end_station_id IS NULL)
   ) /	
  (SELECT CAST(COUNT(*) AS numeric)
-  FROM bike_trips.trips_p1)
+  FROM trips_p1)
 			 , 2) AS NULL_values_percent
 
 -- none
@@ -1014,14 +1277,14 @@ SELECT round(100 *
 -- trips_p2
 SELECT round(100 * 
  (SELECT CAST(COUNT(*) AS numeric) 
-  FROM bike_trips.trips_p2
+  FROM trips_p2
   WHERE (start_station_name IS NULL 
   AND start_station_id IS NULL)
   OR (end_station_name IS NULL
   AND end_station_id IS NULL)
   ) /	
  (SELECT CAST(COUNT(*) AS numeric)
-  FROM bike_trips.trips_p2)
+  FROM trips_p2)
 			 , 2) AS NULL_values_percent
 
 -- 12.68% of data is NULL
@@ -1033,14 +1296,14 @@ Since only table **trips_p2** has NULL values, we then use the table **trips_p2*
 -- entire dataset
 SELECT round(100 * 
  (SELECT CAST(COUNT(*) AS numeric) 
-  FROM bike_trips.trips_p2
+  FROM trips_p2
   WHERE (start_station_name IS NULL 
   AND start_station_id IS NULL)
   OR (end_station_name IS NULL
   AND end_station_id IS NULL)
   ) /	
  (SELECT CAST(COUNT(*) AS numeric)
-  FROM bike_trips.trips)
+  FROM trips)
 			 , 2) AS omitted_data_percent
 
 -- 3.45% of data is NULL
@@ -1062,7 +1325,7 @@ Add the missing stations to Stations table
 
 ```sql
 -- Import
-COPY bike_trips.stations (
+COPY stations (
   id, 
   name, 
   docks,
@@ -1085,14 +1348,14 @@ Some IDs need to change from the table.
 
 ```sql
 -- Create table
-CREATE TABLE bike_trips.id_changes_stations (
+CREATE TABLE id_changes_stations (
   name varchar,
   id bigint);
 ```
 
 ```sql
 -- Import
-COPY bike_trips.id_changes_stations (name, id)
+COPY id_changes_stations (name, id)
 FROM 'D:/Github/divvy-bikeshare/csv files/stations/id_changes_stations.csv'
 DELIMITER ',' CSV HEADER;
 ```
@@ -1100,13 +1363,16 @@ DELIMITER ',' CSV HEADER;
 *ID change*
 
 ```sql
-UPDATE bike_trips.stations as s
+UPDATE stations as s
 SET id = c.new_id
-FROM bike_trips.id_changes_stations as c
+FROM id_changes_stations as c
 WHERE s.name = c.old_name;
 ```
 
 <h2 id = "cleaned-dataset">🧹 Cleaned Dataset</h2>
 
-- [Trips_table](https://www.dropbox.com/s/qb3ndglnmf7gwh5/trips.csv?dl=0) (4.5 gb)
-- [Stations_table](https://github.com/ca-ros/divvy-bikeshare/blob/master/data%20wrangling/csv%20files/stations_cleaning/Stations_cleaned.csv) (120 kb)
+Download here:
+- [Kaggle](www.kaggle.com/dataset/e116a4d4f9c1900cf2b5b0b6a9270e20a378a4a18d209f5277253e8afbf2ef7d)
+- [Google Drive](https://drive.google.com/file/d/1xhHuh9WXHtIBLPV6OO-a62th6Ev27jmM/view?usp=sharing)
+
+> This dataset contains trip duration less than 60 seconds and stations with null values. I kept it incased someone need the entire data. Stations with null values will be filled with data in the future after I have a good grasp in **Machine Learning** and **Web Scraping**.

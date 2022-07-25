@@ -39,7 +39,7 @@ page_data:
   list:
     # example
     - type: sql
-      project_name: "Data wrangling: divvybikes"
+      project_name: "Data Wrangling: divvybikes"
       project_excerpt: "Documentation of the entire process of data wrangling where I utilized my skills in SQL and Advanced Excel "
       img: ":project1_thumb.jpg"
       img_title: "divvy-logo"
@@ -1146,7 +1146,7 @@ page_data:
 
     - type: python
       project_name: "Analysis: divvybikes"
-      project_excerpt: "Data anaylsis of biketrips dataset using Python "
+      project_excerpt: "Data anaylsis of biketrips dataset using Python"
       img: ":project1_thumb.jpg"
       img_title: "divvy-logo"
       date: "2022-07-12"
@@ -1155,7 +1155,16 @@ page_data:
 
     - type: dashboards
       project_name: "Dashboard: divvybikes"
-      project_excerpt: "Interactive dashboard of biketrips dataset using Tableau "
+      project_excerpt: "Interactive dashboard of biketrips dataset using Tableau"
+      img: ":project1_thumb.jpg"
+      img_title: "divvy-logo"
+      date: "2022-07-12"
+      post: |
+        Coming soon 😎
+
+    - type: python
+      project_name: "Machine Learning: divvybikes"
+      project_excerpt: "Model used to identify missing bike stations using its coordinates"
       img: ":project1_thumb.jpg"
       img_title: "divvy-logo"
       date: "2022-07-12"

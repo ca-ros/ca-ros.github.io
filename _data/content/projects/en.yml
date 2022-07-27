@@ -23,10 +23,10 @@ page_data:
       color: "#2FD0ED"
     - title: "Python"
       type: python
-      color: "#e04fee"
+      color: "#2432b2"
     - title: "Data Visualization"
       type: dashboards
-      color: "#2432b2"
+      color: "#e04fee"
 
 
 #    - title: "Picture"

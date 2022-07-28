@@ -1155,7 +1155,7 @@ page_data:
 
     - type: tableau
       project_name: "Dashboard: divvybikes"
-      project_excerpt: "Interactive dashboard of biketrips dataset using Tableau"
+      project_excerpt: "Interactive dashboard of biketrips dataset"
       img: ":project1_thumb.jpg"
       img_title: "divvy-logo"
       date: "2022-07-12"

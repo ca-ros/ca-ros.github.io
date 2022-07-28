@@ -26,7 +26,7 @@ page_data:
       color: "#2432b2"
     - title: "Tableau"
       type: tableau
-      color: "#C6E4E2"
+      color: "#e04fee"
 
 
 #    - title: "Picture"

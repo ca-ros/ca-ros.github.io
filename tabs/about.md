@@ -34,7 +34,7 @@ img: ":about.jpg"
 #published: false
 ---
 
-Hi, my name is Chris Arthur Rosaroso. I'm a self-taught data analyst in the Philippines. I have a life long passion about data and a curiosity that fuels it. My passion for data science lies on the path of 3 meaningful outcomes: *discovery*, *insight*, *innovation*.
+Hi, my name is Chris Arthur Rosaroso. I'm a self-taught data analyst based in the Philippines. I have a life long passion about data and a curiosity that fuels it. My passion for data science lies on the path of 3 meaningful outcomes: *discovery*, *insight*, *innovation*.
 
 I believe that data tells us more than just numbers, it helps us uncover stories about certain events and timelines where we can leverage into valuable actionable insights. I am focusing on marketing analytics as my niche, where I help the brand with valuable insights using the customer data. As COVID hits during my graduation on 2020, I was introduced to remote jobs. I eventually migrated to data science by getting certified. I am now skilled in Excel, SQL, R, and Tableau, and am currently learning Python.
 

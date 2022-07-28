@@ -24,9 +24,9 @@ page_data:
     - title: "Python"
       type: python
       color: "#2432b2"
-    - title: "Data Visualization"
-      type: dashboards
-      color: "#e04fee"
+    - title: "Tableau"
+      type: tableau
+      color: "#C6E4E2"
 
 
 #    - title: "Picture"
@@ -1153,7 +1153,7 @@ page_data:
       post: |
         Coming soon 😎
 
-    - type: dashboards
+    - type: tableau
       project_name: "Dashboard: divvybikes"
       project_excerpt: "Interactive dashboard of biketrips dataset using Tableau"
       img: ":project1_thumb.jpg"

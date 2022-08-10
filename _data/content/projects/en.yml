@@ -73,13 +73,13 @@ page_data:
 
         > The Stations table continues to get updates. I noticed some changes since I downloaded the data on May 15, 2022 and redownload on June 28, 2022. When I check the site, there is an update on May 18, 2022 hence the change in data.
 
-        &nbsp;
-
         ### Tools used
         - [MS Excel](https://www.microsoft.com/en-ww/microsoft-365/excel)
         - [Notepad++](https://notepad-plus-plus.org/downloads/)
         - [PostgreSQL](https://www.postgresql.org/download/)
         - [RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+        &nbsp;
 
         <h2 align = "center">Table of Content</h2>
 
@@ -115,6 +115,7 @@ page_data:
           - [SQL Query](#sql-query-2)
         - [NULL values](#null-values)
           - [SQL Query](#sql-query-3)
+        - [Invalid Data](#invalid-data)
 
         IV. [Stations table](#stations-table)
 
@@ -543,7 +544,6 @@ page_data:
         > Upon checking, 2 station names from **trips_p1** table has already existing names in **Stations** table. Thus, duplicate station names with a different **station_id**.
 
         <h4 id = "clean-macros">Clean Macros</h4>
-        #### Clean Macros
 
         We need to debug and clean the macros to remove any possible errors. Not only this will remove errors, the code will also be easy to read. Open the Visual Basic: Under *Developer* > *Code* > *Visual Basic*. Under the (*Workbook name*) > *Modules* > *Module1*. The macros recorded must be the same as the codes below. 
 
@@ -1076,6 +1076,16 @@ page_data:
         -- 3.45% of data is NULL
         ```
 
+        <h3 align = "center" id = "invalid-data"><strong>Invalid Data</strong></h3>
+
+        We will remove any trips that were below 60 seconds in length (potentially false starts or users trying to re-dock a bike to ensure it was secure).
+
+        ```sql
+        DELETE FROM trips
+        WHERE trip_duration < 60
+        ```
+
+
         &nbsp;
 
         <h2 align = "center" id = "stations-table">Stations table</h2>
@@ -1142,7 +1152,7 @@ page_data:
         - [Kaggle](www.kaggle.com/dataset/e116a4d4f9c1900cf2b5b0b6a9270e20a378a4a18d209f5277253e8afbf2ef7d)
         - [Google Drive](https://drive.google.com/file/d/1xhHuh9WXHtIBLPV6OO-a62th6Ev27jmM/view?usp=sharing)
 
-        > This dataset contains trip duration less than 60 seconds and stations with null values. I kept it incased someone need the entire data. Stations with null values will be filled with data in the future after I have a good grasp in **Machine Learning** and **Web Scraping**.  
+        > This dataset contains stations with null values. I kept it incased someone need the entire data. These will be filled with data in the future after I have a good grasp in **Machine Learning** and **Web Scraping**.  
 
     - type: python
       project_name: "Analysis: divvybikes"
@@ -1160,7 +1170,12 @@ page_data:
       img_title: "divvy-logo"
       date: "2022-07-12"
       post: |
-        Coming soon 😎
+        [Biketrips in Chicago](https://public.tableau.com/app/profile/chris.arthur.rosaroso/viz/BiketripsinChicago/viz)
+        
+        Preview:
+        ![]()
+
+        <div class='tableauPlaceholder' id='viz1660157582986' style='position: relative'><noscript><a href='#'><img alt='viz ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bi&#47;BiketripsinChicago&#47;viz&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BiketripsinChicago&#47;viz' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bi&#47;BiketripsinChicago&#47;viz&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1660157582986');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1450px';vizElement.style.height='977px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
     - type: python
       project_name: "Machine Learning: divvybikes"

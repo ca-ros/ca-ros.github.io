@@ -1154,15 +1154,6 @@ page_data:
 
         > This dataset contains stations with null values. I kept it incased someone need the entire data. These will be filled with data in the future after I have a good grasp in **Machine Learning** and **Web Scraping**.  
 
-    - type: python
-      project_name: "Analysis: divvybikes"
-      # project_excerpt: "Data anaylsis of biketrips dataset using Python"
-      project_excerpt: "Coming soon 😎"
-      img: ":project1_thumb.jpg"
-      img_title: "divvy-logo"
-      date: "2022-08-12"
-      post: |
-        Coming soon 😎
 
     - type: tableau
       project_name: "Dashboard: divvybikes"
@@ -1176,6 +1167,18 @@ page_data:
         Preview:
         
         ![](https://snipboard.io/uYoIJV.jpg)
+
+
+    - type: python
+      project_name: "Analysis: divvybikes"
+      # project_excerpt: "Data anaylsis of biketrips dataset using Python"
+      project_excerpt: "Coming soon 😎"
+      img: ":project1_thumb.jpg"
+      img_title: "divvy-logo"
+      date: "2022-08-12"
+      post: |
+        Coming soon 😎
+
 
     - type: python
       project_name: "Machine Learning: divvybikes"
